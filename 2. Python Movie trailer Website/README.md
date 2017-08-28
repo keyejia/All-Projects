@@ -7,7 +7,7 @@ Require python to run
 # How to start
 copy the repository. 
 
-include files: fresh_tomatoes.py ; media.pu ; entertainment.py 
+include files: fresh_tomatoes.py ; media.pu ; entertainment.py in the same folder
 
 Open entertainment_center.py with python
 
