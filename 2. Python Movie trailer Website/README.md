@@ -1,4 +1,4 @@
-# Phython Movie Trialer website
+# Python Movie Trialer website
 A simple website displays movie trailers. build with python
 
 # Installation
