@@ -1,0 +1,116 @@
+body{
+	padding:5%;
+	padding-top:5px;
+	margin-bottom:30px;
+	background-color:#C9AE87;
+	font-weight: 500;
+	font-family:Stencil Std, fantasy;
+	color:#AC4236;
+}
+
+.top_banner {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#AC4236;
+}
+
+.bottom_banner{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#AC4236;
+}
+
+.banner_pic{
+	width:100%;
+}
+
+.nav {
+    float: left;
+}
+
+.nav a {
+    display: block;
+    color: #C9AE87;
+    text-align: center;
+    padding: 14px 15px;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    background-color: #1a0000;
+}
+
+.flash{
+	padding-left:10%;
+	padding-top: 10px;
+	font-size:1.4em;
+}
+.genres{
+	font-size:1.5em;
+	display:block;
+	margin-left:20%;
+	margin-right:20%;
+	color:#AC4236;
+	text-align: center;
+	text-decoration: none;
+	padding-bottom:0px;
+}
+
+.genres:hover{
+	background-color:#AC4236;
+	color:#C9AE87;
+}
+
+.edit_delete{
+	display:block;
+	text-align:center;
+	padding: 0px 5px;
+}
+
+.delete{
+		color:#AC4236;
+	text-decoration: none;
+	border-left: 1.5px solid #AC4236;
+	padding: 0px 5px;
+}
+
+.edit{
+		color:#AC4236;
+	text-decoration: none;
+	border-right: 1.5px solid #AC4236;
+	padding: 0px 5px;
+}
+
+.edit:hover{
+	background-color:#AC4236;
+	color:#C9AE87;
+}
+.delete:hover{
+	background-color:#AC4236;
+	color:#C9AE87;
+}
+
+.title_block{
+   padding-left: 10%;
+   padding-right:10%;
+   padding-top:20px;
+}
+.page_title {
+
+   width: 100%; 
+   text-align: center; 
+   font-size:3.8em;
+   border-bottom: 7px solid #AC4236; 
+   line-height: 0.1em;
+   margin: 10px 0 20px; 
+} 
+
+.page_title span { 
+    background:#C9AE87; 
+    padding:0 10px; 
+}
+

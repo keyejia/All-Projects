@@ -1,0 +1,47 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	<div class="row divider green">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner menu">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+			<h1>Edit Album</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1 padding-top">
+			<form action="#" method = "post">
+				<div class="form-group">
+					<label for="name">Name:</label>
+					<input type ="text" maxlength="100" class="form-control" name="name" value="{{item.name}}">
+				</br>
+
+					<label for="artist">Artist:</label>
+					<input type ="text" maxlength="100" class="form-control" name="artist" value="{{item.artist}}">
+					</br>
+
+					<label for="year">Year:</label>
+					<input type ="text" maxlength="100" class="form-control" name="year" value="{{item.year}}">
+					</br>
+
+					<label for="description">Description:</label>
+					<textarea class="form-control" maxlength="250" rows="3" name="description">{{item.description}}
+					</textarea>
+					</br>
+
+					<label for="image_address">image_address:</label>
+					<input type ="text" maxlength="100" class="form-control" name="image_address" value="{{item.image_address}}">
+					</br>
+
+					<button type="submit" class="btn btn-default" id="submit" type="submit">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save</button>
+					<a href = "{{url_for('showGenre')}}">
+						<button class="btn btn-default delete">
+						<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel</button>
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}
