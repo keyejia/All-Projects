@@ -1,43 +1,36 @@
 {% extends "main.html" %}
 {% block content %}
 {% include "header.html" %}
-	<div class="row divider green">
-		<div class="col-md-12"></div>
-	</div>
-	<div class="row banner menu">
-		<div class="col-md-11 col-md-offset-1 padding-none">
-			<h1>New Album</h1>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6 col-md-offset-1 padding-top">
-			<form action="#" method = "post">
-				<div class="form-group">
-					<label for="name">Name:</label>
-					<input type ="text" maxlength="50" class="form-control" name="name" placeholder="Name of the Album">
-					<br/>
 
-					<label for="artist">Artist:</label>
-					<input type ="text" maxlength="50" class="form-control" name="artist" placeholder="Artist name">
-					<br/>
+<h1>New Album</h1>
 
-					<label for="year">Year:</label>
-					<input type ="text" maxlength="50" class="form-control" name="year" placeholder="The year it was released">
-					<br/>
+<div class="edit_area">
+	<form action="#" method = "post">
+		<label for="name">Name:</label>
+		<input type ="text" maxlength="50" class="form-control" name="name" placeholder="Name of the Album">
+		<br/>
 
-					<label for="description">Description:</label>
-					<input type ="text" maxlength="400" class="form-control" name="description" placeholder="description of the album">
-					<br/>
+		<label for="artist">Artist:</label>
+		<input type ="text" maxlength="50" class="form-control" name="artist" placeholder="Artist name">
+		<br/>
 
-					<label for="image_address">image address:</label>
-					<input type ="text" maxlength="120" class="form-control" name="image_address" placeholder="enter address of the image">
-					<br/>
+		<label for="year">Year:</label>
+		<input type ="text" maxlength="50" class="form-control" name="year" placeholder="The year it was released">
+		<br/>
 
-					<button type="submit" class="btn btn-default" id="submit" type="submit">
-					<span class="glyphicon glyphicon-glass" aria-hidden="true"></span>Create</button>
-				</div>
-			</form>
-		</div>
-	</div>
+		<label for="description">Description:</label>
+		<input type ="text" maxlength="400" class="form-control" name="description" placeholder="description of the album">
+		<br/>
+
+		<label for="image_address">image address:</label>
+		<input type ="text" maxlength="120" class="form-control" name="image_address" placeholder="enter address of the image">
+		<br/>
+
+		<button type="submit" class="button" id="submit" type="submit">
+			Create
+		</button>
+	</form>
+</div>
+{% include "footer.html" %}
 {% endblock %}
 

@@ -3,29 +3,28 @@
 {% include "header.html" %}
 
 <div class = title_block>
-<h1 class = "page_title"><span>&#9733 Genres &#9733</span></h1>
+	<h1 class = "page_title"><span>&#9733 Genres &#9733</span></h1>
 </div>
 
 <div class = "flash">
-		      {% with messages = get_flashed_messages() %}
-      {% if messages %}         
-        <ul>
-        {% for message in messages %}
-            <li class = "flash"> <strong> {{ message }} !</strong> </li>
-        {% endfor %}
-        </ul>
+	{% with messages = get_flashed_messages() %}
+    	{% if messages %}         
+        	<ul>
+        	{% for message in messages %}
+            	<li class = "flash"> <strong> {{ message }} !</strong> </li>
+        	{% endfor %}
+        	</ul>
         {% endif %}
     {% endwith %}
 </div>
 
 	<br/>
 	{% for genres in genre %}
-						<a class ="genres" href="{{url_for('showAlbums', genre_id = genres.id)}}">
-						<h1>{{genres.name}}</h1>
-						</a>
-
-
+	<a class ="genres" href="{{url_for('showAlbums', genre_id = genres.id)}}">
+		<h1>{{genres.name}}</h1>
+	</a>
 	<br/>
+
 	{% endfor %}
-	{% include "footer.html" %}
+{% include "footer.html" %}
 {% endblock %}

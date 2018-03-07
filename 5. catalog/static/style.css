@@ -7,6 +7,51 @@ body{
 	font-family:Stencil Std, fantasy;
 	color:#AC4236;
 }
+/* For Large Screens */
+.page_title {
+   font-size:3.8em;
+   border-bottom: 7px solid #AC4236; 
+} 
+.genres{
+	font-size:1.5em;
+}
+.albums{
+	margin-left: 25%;
+	margin-right:25%;
+	margin-top:5px;
+	padding:2%;
+}
+.title_block{
+   padding-top:25px;
+}
+.flash{
+	padding-top: 10px;
+	font-size:1.4em;
+}
+
+/* For Mobile */
+@media all and (max-width: 770px) {
+    .page_title {
+   		font-size:2em;
+   		border-bottom: 3px solid #AC4236; 
+	} 
+	.title_block{
+   		padding-top:5px;
+	}
+	.genres{
+		font-size:0.8em;
+	}
+	.albums{
+		margin-left: 0%;
+		margin-right:0%;
+		margin-top:1px;
+		padding:0%;
+	}
+	.flash{
+	padding-top: 5px;
+	font-size:0.8em;
+}
+}
 
 .top_banner {
     list-style-type: none;
@@ -44,13 +89,11 @@ body{
     background-color: #1a0000;
 }
 
-.flash{
-	padding-left:10%;
-	padding-top: 10px;
-	font-size:1.4em;
+.bottom_banner{
+	margin-top:5px;
 }
+
 .genres{
-	font-size:1.5em;
 	display:block;
 	margin-left:20%;
 	margin-right:20%;
@@ -68,21 +111,27 @@ body{
 .edit_delete{
 	display:block;
 	text-align:center;
-	padding: 0px 5px;
+	margin:0;
+}
+
+.edit_delete_albums{
+	float:right;
 }
 
 .delete{
-		color:#AC4236;
+	color:#AC4236;
 	text-decoration: none;
 	border-left: 1.5px solid #AC4236;
 	padding: 0px 5px;
+	margin:0;
 }
 
 .edit{
-		color:#AC4236;
+	color:#AC4236;
 	text-decoration: none;
 	border-right: 1.5px solid #AC4236;
 	padding: 0px 5px;
+	margin:0;
 }
 
 .edit:hover{
@@ -94,17 +143,9 @@ body{
 	color:#C9AE87;
 }
 
-.title_block{
-   padding-left: 10%;
-   padding-right:10%;
-   padding-top:20px;
-}
 .page_title {
-
    width: 100%; 
    text-align: center; 
-   font-size:3.8em;
-   border-bottom: 7px solid #AC4236; 
    line-height: 0.1em;
    margin: 10px 0 20px; 
 } 
@@ -114,3 +155,43 @@ body{
     padding:0 10px; 
 }
 
+.albums{
+	display:block;
+	text-align: center;
+	border:1px solid #AC4236;
+}
+
+.albums:hover{
+	box-shadow: 8px 3px 3px rgba(0,0,0,0.15);
+	transition: box-shadow 0.3s ease-in-out;
+}
+
+.album_cover{
+	width:100%;
+	max-width:300px;
+}
+
+.Description{
+	text-align: left;
+	margin-left:20%;
+	margin-right:20%;
+	margin-top:5px
+	margin-bottom:5px;
+}
+
+.edit_area{
+	display:block;
+	text-align: left;
+	margin-top:10px;
+	margin-bottom:45px;
+	padding:10px;
+	border:1px solid #AC4236;
+}
+
+.button{
+	margin:5px;
+}
+
+label, input{
+	display:block;
+}
