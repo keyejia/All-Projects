@@ -6,7 +6,6 @@ from flask import session as login_session
 import random
 import string
 
-# IMPORTS FOR THIS STEP
 from oauth2client.client import flow_from_clientsecrets
 from oauth2client.client import FlowExchangeError
 import httplib2
@@ -158,7 +157,7 @@ def gdisconnect():
         response.headers['Content-Type'] = 'application/json'
         return response
 
-
+#Add user info into database
 def createUser(login_session):
     newUser = User(name=login_session['username'], email=login_session[
                    'email'], picture=login_session['picture'])
@@ -167,12 +166,12 @@ def createUser(login_session):
     user = session.query(User).filter_by(email=login_session['email']).one()
     return user.id
 
-
+#Get user info from database
 def getUserInfo(user_id):
     user = session.query(User).filter_by(id=user_id).one()
     return user
 
-
+#Get user id from database
 def getUserID(email):
     try:
         user = session.query(User).filter_by(email=email).one()
@@ -180,29 +179,28 @@ def getUserID(email):
     except:
         return None
 
-# # JSON APIs to view Restaurant Information
-# @app.route('/restaurant/<int:restaurant_id>/menu/JSON')
-# def restaurantMenuJSON(restaurant_id):
-#     restaurant = session.query(Restaurant).filter_by(id=restaurant_id).one()
-#     items = session.query(MenuItem).filter_by(
-#         restaurant_id=restaurant_id).all()
-#     return jsonify(MenuItems=[i.serialize for i in items])
+# JSON APIs to view genre Information
+@app.route('/genre/<int:genre_id>/album/JSON')
+def genrealbumJSON(genre_id):
+    genre = session.query(Genre).filter_by(id=genre_id).one()
+    items = session.query(Albums).filter_by(
+        genre_id=genre_id).all()
+    return jsonify(albumItems=[i.serialize for i in items])
 
 
-# @app.route('/restaurant/<int:restaurant_id>/menu/<int:menu_id>/JSON')
-# def menuItemJSON(restaurant_id, menu_id):
-#     Menu_Item = session.query(MenuItem).filter_by(id=menu_id).one()
-#     return jsonify(Menu_Item=Menu_Item.serialize)
+@app.route('/genre/<int:genre_id>/album/<int:album_id>/JSON')
+def albumItemJSON(genre_id, album_id):
+    album_Item = session.query(Albums).filter_by(id=album_id).one()
+    return jsonify(album_Item=album_Item.serialize)
 
 
-# @app.route('/restaurant/JSON')
-# def restaurantsJSON():
-#     restaurants = session.query(Restaurant).all()
-#     return jsonify(restaurants=[r.serialize for r in restaurants])
+@app.route('/genre/JSON')
+def genresJSON():
+    genres = session.query(Genre).all()
+    return jsonify(genres=[r.serialize for r in genres])
 
 
 # Show all Genre
-
 @app.route('/')
 @app.route('/genre/')
 def showGenre():
@@ -213,7 +211,6 @@ def showGenre():
         return render_template('genre.html', genre=genres)
 
 #Create a new Genre
-
 @app.route('/genre/new/', methods=['GET', 'POST'])
 def newGenre():
     if 'username' not in login_session:
@@ -228,7 +225,6 @@ def newGenre():
         return render_template('newGenre.html')
 
 # Edit a Genre
-
 @app.route('/genre/<int:genre_id>/edit/', methods=['GET', 'POST'])
 def editGenre(genre_id):
     editedGenre = session.query(
@@ -266,8 +262,6 @@ def deleteGenre(genre_id):
         return render_template('deletegenre.html', genre=genreToDelete)
 
 # Show a genre albums
-
-
 @app.route('/genre/<int:genre_id>/')
 @app.route('/genre/<int:genre_id>/albums/')
 def showAlbums(genre_id):
@@ -278,7 +272,6 @@ def showAlbums(genre_id):
         return render_template('publicalbums.html', albums=albums, genre=genre)
     else:
         return render_template('albums.html', albums=albums, genre=genre)
-
 
 # Create a new album
 @app.route('/genre/<int:genre_id>/albums/new/', methods=['GET', 'POST'])
@@ -301,8 +294,7 @@ def newAlbum(genre_id):
     else:
         return render_template('newalbum.html', genre_id=genre_id)
 
-# Edit a menu item
-
+# Edit a album item
 @app.route('/genre/<int:genre_id>/albums/<int:album_id>/edit', methods=['GET', 'POST'])
 def editalbum(genre_id, album_id):
     if 'username' not in login_session:
@@ -329,8 +321,7 @@ def editalbum(genre_id, album_id):
         return render_template('editalbum.html', genre_id=genre_id, album_id=album_id, item=editedAlbum)
 
 
-# Delete a menu item
-
+# Delete a album item
 @app.route('/genre/<int:genre_id>/albums/<int:album_id>/delete', methods=['GET', 'POST'])
 def deletealbum(genre_id, album_id):
     if 'username' not in login_session:
@@ -347,7 +338,6 @@ def deletealbum(genre_id, album_id):
         return redirect(url_for('showAlbums', genre_id=genre_id))
     else:
         return render_template('deletealbum.html', item=itemToDelete)
-
 
 if __name__ == '__main__':
     app.secret_key = 'super_secret_key'

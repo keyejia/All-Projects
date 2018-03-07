@@ -6,11 +6,11 @@
 		</a>
 	</li>
 	<li style = "float:right" class="nav">
-					{%if 'username' not in session %}
-			<a href="{{url_for('showLogin')}}">Click Here to Login </a>
-			{% else %}
-			<a href="{{url_for('gdisconnect')}}">Logout </a>
-			{% endif %}
+		{%if 'username' not in session %}
+		<a href="{{url_for('showLogin')}}">Click Here to Login </a>
+		{% else %}
+		<a href="{{url_for('gdisconnect')}}">Logout </a>
+		{% endif %}
 	</li>
 </ul>
 
