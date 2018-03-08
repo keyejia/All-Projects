@@ -1,4 +1,10 @@
-from flask import Flask, render_template, request, redirect, jsonify, url_for, flash
+from flask import (Flask, 
+                   render_template, 
+                   request, 
+                   redirect, 
+                   jsonify, 
+                   url_for, 
+                   flash)
 from sqlalchemy import create_engine, asc
 from sqlalchemy.orm import sessionmaker
 from database_setup import Base, Albums, Genre, User
@@ -119,7 +125,11 @@ def gconnect():
     output += '!</h1>'
     output += '<img src="'
     output += login_session['picture']
-    output += ' " style = "width: 300px; height: 300px;border-radius: 150px;-webkit-border-radius: 150px;-moz-border-radius: 150px;"> '
+    output += ' "style = "width: 300px;'\
+			  'height:300px;'\
+			  'border-radius: 150px;'\
+			  '-webkit-border-radius: 150px;'\
+			  '-moz-border-radius: 150px;"> '
     flash("you are now logged in as %s" % login_session['username'])
     print "done!"
     return output
@@ -318,8 +328,10 @@ def editalbum(genre_id, album_id):
         flash('Album was Successfully Edited')
         return redirect(url_for('showAlbums', genre_id=genre_id))
     else:
-        return render_template('editalbum.html', genre_id=genre_id, album_id=album_id, item=editedAlbum)
-
+        return render_template('editalbum.html', 
+								genre_id=genre_id, 
+								album_id=album_id, 
+								item=editedAlbum)
 
 # Delete a album item
 @app.route('/genre/<int:genre_id>/albums/<int:album_id>/delete', methods=['GET', 'POST'])
