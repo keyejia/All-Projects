@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Neighborhood of Home</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var cities = [{
+        name:'XiAn',
+        coord: {lat: 34.3483581, lng: 108.9218753}
+      },
+      {
+        name:'SuZhou',
+        coord: {lat:31.3003358,lng:120.5759451}
+      }
+      ];
+
+      var markers = [];
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 39.7970062, lng: 109.653086},
+          zoom: 5
+        });
+
+        var Icon = {
+          url:'img/yellow_star.png',
+          size: new google.maps.Size(32,32),
+          origin: new google.maps.Point(0,0),
+          anchor: new google.maps.Point(16, 16)
+        };
+        cities.forEach(function(cities){
+          cities.marker = new google.maps.Marker({
+            position: cities.coord,
+            icon: Icon,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            title: cities.name 
+          });
+
+          markers.push({
+            name: cities.name,
+            marker: cities.marker
+          });
+
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAb-pmLEU0VC1b2Cbzi1w-nxEzY2oN8WEU&callback=initMap"
+    async defer></script>
+  </body>
+</html>
