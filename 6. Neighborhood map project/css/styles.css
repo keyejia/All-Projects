@@ -1,0 +1,95 @@
+#map {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display:block;
+}
+html, body {
+	display:block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  color:white;
+}
+li a {
+  display: block;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: white;
+	color: #555;
+}
+
+input[type=text] {
+	width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+ 	transition: 0.5s;
+  outline: none;
+}
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+#overlay {
+  display:block;
+  z-index: 3;
+  position: fixed;
+  left: 250px;
+  width: 200px;
+  height: 100%;
+  margin-left: -250px;
+  padding-top: 10px;
+  overflow-y: auto;
+  background: rgba(0,0,0,0.5);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.filterbtn {
+  background-color: black;
+  border: none;
+  color: white;
+  text-align: center;
+  width:25%;
+  padding: 12px 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hidebtn {
+  z-index: 2;
+  position: fixed;
+  margin-left:15px;
+  margin-top:15px;
+  padding: 10px 12px;
+}
+.closebtn{
+  background-color: white;
+  border: none;
+  color: black;
+  text-align: center;
+  padding: 15px 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 750px) {
+  #overlay{
+    display:none;
+  }
+
+}
