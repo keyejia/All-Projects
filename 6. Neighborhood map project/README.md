@@ -1,5 +1,5 @@
 # Neighborhood Map Project  
-## Udacity Full Stack Web Developer Nanodegree  
+## Full Stack Web Developer Nanodegree  
 A single page application featuring a map of your neighborhood or a neighborhood you would like to visit. Added functionality to this map including highlighted locations, wikipedia extract and bing image about those locations and various ways to browse the content.
 
 ## Frameworks, Libraries, and APIs  
