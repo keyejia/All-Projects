@@ -1,4 +1,4 @@
-# Full Stack development projects
+# Code of all projects
 ### 1. Python random Generated recursive graphical tree
 Generates a random graphical tree each time it is executed using turtle library from Python
 
